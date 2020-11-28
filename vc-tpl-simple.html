@@ -1,0 +1,44 @@
+{include file="rad-template-header.tpl"} <!-- DON'T REMOVE THIS LINE -->
+ {foreach $v as $vs} <!-- DON'T REMOVE THIS LINE -->
+ <!-- don't include opening body tag -->
+ <!-- START CUSTOM HTML -->
+ <!-- ############################# -->
+ 
+ <table style="display: inline-block; width: 188px; border: 1px solid #ccc; line-height: 110%; font-family: tahoma; font-size: 12px; margin: 1px;">
+ <tbody>
+  <tr>
+    <td>
+     <table style="text-align: center; width: 180px; background-color: #fff; line-height: 110%; font-size: 12px; border-top: 1px solid #ccc;">
+      <tbody>
+       <tr style="color: red; font-size: 11px;">
+        <td {if $vs['code'] neq $vs['secret']} style="width: 50%" {else} style="width: 100%" {/if}>{if $vs['code'] neq $vs['secret']} Username {else} Voucher Code {/if}</td>
+    {if $vs['code'] neq $vs['secret']}
+        <td>Password</td>
+    {/if}    
+       </tr>
+       <tr style="background-color: #fff;">
+        <td style="color: #000; border: 1px #ccc solid;font-family: 'Courier New'">{$vs['code']}</td>
+    {if $vs['code'] neq $vs['secret']}    
+        <td style="color: #000; border: 1px #ccc solid;;font-family: 'Courier New'">{$vs['secret']}</td>
+    {/if}    
+      </tr>
+     </tbody>
+    </table>
+     <table style=" text-align: center; width: 180px; background-color: #fff; line-height: 110%; font-size: 12px; ">
+      <tbody>
+       <tr style="background-color: #fff;">
+        <td style="color: #000; border: 1px #ccc solid;">{$vs['plan_name']}</td>
+      </tr>
+     </tbody>
+    </table>    
+   </td>
+  </tr>
+ </tbody>
+ </table>
+
+
+ <!-- ############################# -->
+ <!-- END CUSTOM HTML -->
+ <!-- don't include closing body tag -->
+ {/foreach} <!-- DON'T REMOVE THIS LINE -->
+ {include file="rad-template-footer.tpl"} <!-- DON'T REMOVE THIS LINE -->
